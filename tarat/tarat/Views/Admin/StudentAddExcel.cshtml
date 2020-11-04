@@ -1,0 +1,9 @@
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "StudentAddExcel";
+}
+<form action="/Admin/AddExcel" method="post" enctype="multipart/form-data">
+    <label>File:</label>
+    <input type="file" name="file" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"/>
+    <button>Submit</button>
+</form>

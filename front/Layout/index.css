@@ -1,0 +1,39 @@
+.header{
+    padding: 15px 0;
+    background-color: #FFFFFF;
+}
+.header-logo{
+    font-size: 25px;
+    line-height: 30px;
+    text-transform: lowercase;
+    font-family: 'Monospace', 'Lucida Console';
+    color: #00009a;
+    cursor: pointer;
+    float: left;
+}
+body{
+    background: #fafafa !important;
+}
+.header-profile{
+    float: right;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 30px;
+    margin-top: 2px;
+    font-family: 'Lucida Console';
+    word-spacing: -5px;
+    font-weight: bold;
+}
+.header-section{
+    float: left;
+    margin-top: 5px;
+    font-family: 'Lucida Console';
+    word-spacing: -7px;
+    font-size: 15px;
+    margin-left: 50px;
+    cursor: pointer;
+}
+.header-section:hover{
+    color: #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+}

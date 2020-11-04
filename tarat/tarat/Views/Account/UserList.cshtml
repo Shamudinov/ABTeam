@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "UserList";
+}
+@model List<Tuple<DAL.Entities.User, bool>>
+
+<link rel="stylesheet" href="/css/Account/userlist.css"/>
+<div class="block">
+    <div class="container">
+        @{bool last = true;}
+        <div class="item-row">
+            <p class="item-title"><span class="lang-teachers"></span></p>
+            @foreach (var item in Model)
+            {
+                @if (item.Item2 && last)
+                {
+                    last = false;
+                    @Html.Raw("</div>");
+                    @Html.Raw("<div class='item-row'>");
+                    <p class="item-title"><span class="lang-students"></span></p>
+                }
+                <div class="item">
+                    <p class="item-name">@item.Item1.Name @item.Item1.Surname</p>
+                    @if (item.Item2)
+                    {
+                        <p class="item-class">@item.Item1.Grades.FirstOrDefault()?.Grade.Name</p>
+                    }
+                    <a href="/messages?id=@item.Item1.Id"><button class="item-btn"><span class="lang-write"></span></button></a>
+                </div>
+            }
+        </div>
+    </div>
+</div>

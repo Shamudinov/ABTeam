@@ -1,0 +1,270 @@
+﻿@import url(https://fonts.googleapis.com/css?family=Lora);
+
+body {
+    background: url("https://images.pexels.com/photos/105857/pexels-photo-105857.jpeg?w=1920&h=1280&=compress&cs=tinysrgb") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.cf:before,
+.cf:after {
+    content: "";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    zoom: 1;
+}
+
+/* -----------------------------------------------------------------------------
+This search bar was adapted from a blog post from Catalin Rosu, a.k.a 'Red'*
+ * https://speckyboy.com/how-to-build-a-stylish-css3-search-box/
+------------------------------------------------------------------------------*/
+
+.form-wrapper {
+    width: 450px;
+    padding: 15px;
+    margin: 150px auto 50px auto;
+    background: #444;
+    background: rgba(0, 0, 0, 0.2);
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4) inset, 0 1px 0 rgba(255, 255, 255, 0.2);
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4) inset, 0 1px 0 rgba(255, 255, 255, 0.2);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4) inset, 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+    /* Form text input */
+    .form-wrapper input {
+        width: 330px;
+        height: 20px;
+        padding: 10px 5px;
+        float: left;
+        font: bold 20px "Lora", "trebuchet MS", "Tahoma";
+        border: 0;
+        background: #eee;
+        border-radius: 3px 0 0 3px;
+    }
+
+        .form-wrapper input:focus {
+            outline: 0;
+            background: #fff;
+            box-shadow: 0 0 2px rgba(0, 0, 0, 0.8) inset;
+        }
+
+        .form-wrapper input::-webkit-input-placeholder {
+            color: #999;
+            font-weight: normal;
+            font-style: italic;
+        }
+
+        .form-wrapper input:-moz-placeholder {
+            color: #999;
+            font-weight: normal;
+            font-style: italic;
+        }
+
+        .form-wrapper input:-ms-input-placeholder {
+            color: #999;
+            font-weight: normal;
+            font-style: italic;
+        }
+
+    /* Form submit button */
+    .form-wrapper button {
+        overflow: visible;
+        position: relative;
+        float: right;
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+        height: 40px;
+        width: 110px;
+        font: bold 15px/40px;
+        color: #fff;
+        background: #298998;
+        border-radius: 0 3px 3px 0;
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3);
+    }
+
+        .form-wrapper button:hover {
+            background: #6db4bf;
+        }
+        /* Adding left arrow to search button */
+        .form-wrapper button:before {
+            content: "";
+            position: absolute;
+            border-width: 8px 8px 8px 0;
+            border-style: solid solid solid none;
+            border-color: transparent #298998 transparent;
+            top: 12px;
+            left: -6px;
+        }
+
+.wrapper {
+    text-align: center;
+}
+
+.random {
+    position: relative;
+    width: 150px;
+    margin: -10px 0 0 0;
+    padding: 5px;
+    background: #298998;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 8px;
+    -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4) inset, 0 1px 0 rgba(255, 255, 255, 0.2);
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4) inset, 0 1px 0 rgba(255, 255, 255, 0.2);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4) inset, 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+    .random:hover {
+        background: #6db4bf;
+    }
+
+    .random a {
+        text-decoration: none;
+        font-size: 16px;
+        font-family: Arial, sans-serif, serif;
+        color: #fff;
+    }
+
+.ui-autocomplete {
+    background: white;
+    list-style-type: none;
+    text-align: left;
+    width: 130px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #298998;
+    border-radius: 5px;
+}
+
+    .ui-autocomplete:hover {
+        cursor: pointer;
+    }
+
+.ui-helper-hidden-accessible {
+    display: none;
+}
+
+.container {
+    margin-top: 40px;
+}
+
+.results {
+    background-color: white;
+    max-width: 1500px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    opacity: 0.8;
+    transition: 1s ease;
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadein {
+    /* Firefox */
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein {
+    /* Safari and Chrome */
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadein {
+    /* Opera */
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.results:hover {
+    box-shadow: 0 0 0 5px #298998;
+    transition: 0.5s ease;
+}
+
+a {
+    font: 20px "Lora", "trebuchet MS", "Tahoma";
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Blurring the bottom portion of the background image to add text */
+body .blurBackground {
+    background-image: inherit;
+    background-position: inherit;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+    body .blurBackground:before {
+        background-image: inherit;
+        background-position: inherit;
+        -webkit-filter: blur(6px);
+        -moz-filter: blur(6px);
+        -o-filter: blur(6px);
+        -ms-filter: blur(6px);
+        filter: blur(6px);
+        content: " ";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    body .blurBackground .content {
+        -webkit-filter: blur(0);
+        -moz-filter: blur(0);
+        -o-filter: blur(0);
+        -ms-filter: blur(0);
+        filter: blur(0);
+        color: #298998;
+        text-shadow: 5px 5px 10px black;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.4);
+        text-align: center;
+        font-size: 14px;
+    }

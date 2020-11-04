@@ -1,0 +1,46 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using DAL.Entities
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - tarat</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/vue/vue.js"></script>
+    <script src="~/js/site.js"></script>
+</head>
+<body>
+    <header>
+        <link rel="stylesheet" href="~/css/layout.css" />
+        <div class="header">
+            <div class="container">
+                <div id="header-language">
+                    <div id="header-language-kg">Кыргызча</div>
+                    <div id="header-language-ru">Русский</div>
+                    <div id="header-language-en">English</div>
+                </div>
+                <div class="header-logo">skoool.kg</div>
+                <div id="user-list" class="header-section"><span class="lang-list-user"></span></div>
+                <div id="messages" class="header-section"><span class="lang-messages"></span></div>
+                @if (SignInManager.IsSignedIn(User) && User.IsInRole("Manager"))
+                {
+                    <div id="class-distribution" class="header-section"><span class="lang-class-distribution"></span></div>
+                }
+                <div id="header-fullname" class="header-profile"></div>
+                <img id="header-logout" src="~/img/icon/logout.png" />
+            </div>
+        </div>
+    </header>
+
+    @RenderBody()
+
+    <script src="/js/layout.js"></script>
+    <script src="/js/language.js"></script>
+</body>
+</html>

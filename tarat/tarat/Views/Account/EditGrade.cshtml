@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "EditGrade";
+}
+@model Tuple<List<Tuple<DAL.Entities.Grade, bool>>, string, string>
+
+<link rel="stylesheet" href="~/css/Account/editGrade.css" />
+
+<div class="container">
+    <form method="post" action="/Account/SaveTeacherGrades">
+        <div class="up-block">
+            <p class="up-block-text">@Model.Item3</p>
+            <button class="checkbox-btn"><span class="lang-save"></span></button>
+        </div>
+        <input name="userId" type="hidden" value="@Model.Item2" />
+        @{
+            var lastGrade = -1;
+
+            static int getGrade(string a)
+            {
+                int x = 0;
+
+                for (int i = 0; i < a.Length; i++)
+                {
+                    if (!char.IsDigit(a[i]))
+                    {
+                        break;
+                    }
+
+                    x *= 10;
+                    x += a[i] - '0';
+                }
+
+                return x;
+            }
+
+            for (int i = 0; i < Model.Item1.Count; i++)
+            {
+                if (getGrade(Model.Item1[i].Item1.Name) != lastGrade)
+                {
+                    if (lastGrade != -1)
+                    {
+                        @Html.Raw("</div>")
+                    }
+
+                    lastGrade = getGrade(Model.Item1[i].Item1.Name);
+
+                    @Html.Raw("<div class='checkbox-row'>")
+
+                    <p class="checkbox-title">@lastGrade-<span class="lang-grade"></span></p>
+                }
+
+                <p class="checkbox-label">@Model.Item1[i].Item1.Name</p>
+                if (Model.Item1[i].Item2)
+                {
+                    <input class="checkbox" type="checkbox" name="grade" checked value="@Model.Item1[i].Item1.Id" />
+                }
+                else
+                {
+                    <input class="checkbox" type="checkbox" name="grade" value="@Model.Item1[i].Item1.Id" />
+                }
+            }
+        }
+
+        @Html.Raw("</div>")
+    </form>
+</div>
+<script src="~/js/Account/editGrade.js"></script>

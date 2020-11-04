@@ -1,0 +1,59 @@
+﻿p {
+    font-family: 'Lucida Console';
+}
+.checkbox-row {
+    width: 250px;
+    height: 130px;
+    display: table;
+    float: left;
+    background: white;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-right: 20px;
+    padding: 20px;
+}
+.checkbox-label{
+    float: left;
+    font-size: 15px;
+    margin: 0;
+}
+.checkbox {
+    float: left;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-left: 2px;
+    margin-right: 10px;
+    outline: 1px solid white;
+}
+.checkbox-title{
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: lowercase;
+
+}
+.up-block{
+    border-radius: 5px;
+    background: white;
+    display: table;
+    padding: 20px;
+    margin-top: 20px;
+}
+.up-block-text {
+    font-size: 20px;
+    float: left;
+    margin: 0;
+    padding: 0;
+    line-height: 30px;
+    margin-top: 2px;
+    font-family: 'Lucida Console';
+    margin-right: 20px;
+}
+.checkbox-btn {
+    background: #0000ff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    margin-top: 0px;
+    font-weight: bold;
+    padding: 5px 10px;
+}

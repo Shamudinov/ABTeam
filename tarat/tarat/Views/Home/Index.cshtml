@@ -1,0 +1,60 @@
+﻿
+
+@{
+    ViewData["Title"] = "TeacherIndex";
+}
+
+<link rel="stylesheet" href="~/css/Home/index.css"/>
+<link rel="stylesheet" href="~/lib/dist/css/bootstrap-multiselect.css"/>
+<input type="hidden" id="schoolId" value="@ViewData["SchoolId"]" />
+<div class="container">
+    <form>
+        <div class="message-block">
+            <p class="message-title"><span class="lang-send-message"></span></p>
+            <div class="recipient-block">
+                <p class="recipient-title"><span class="lang-recipient"></span></p>
+                <label class="recipient-label"><span class="lang-grades"></span></label>
+                <select id="grades" multiple required>
+                </select><br />
+                <label class="recipient-label"><span class="lang-students"></span></label>
+                <select id="students" multiple required>
+                </select>
+            </div>
+            <div class="message-template">
+                <label class="message-template-label"><span class="lang-templates"></span></label>
+                <select id="templates" class="multiselect dropdown-toggle btn btn-default"><option value="" disabled selected></option></select>
+            </div>
+            <div id="lesson" class="message-template">
+                <label class="message-template-label"><span class="lang-lesson"></span></label>
+                <input id="lesson-text" class="message-input" required />
+            </div>
+            <div id="homework" class="message-template">
+                <label class="message-template-label"><span class="lang-homework"></span></label>
+                <input id="homework-text" class="message-input" required />
+            </div>
+            <div id="homework-date" class="message-template">
+                <label class="message-template-label"><span class="lang-homework-date"></span></label>
+                <input id="homework-date-text" class="message-input" type="date" required/>
+            </div>
+            <div class="message-template">
+                <label class="message-template-label"><span class="lang-subject"></span></label>
+                <input id="subject" required />
+            </div>
+            <div class="message-template">
+                <label class="message-template-label"><span class="lang-urgency"></span></label>
+                <select id="urgency" class="multiselect dropdown-toggle btn btn-default">
+                    <option class="lang-daily" value="0" selected></option>
+                    <option class="lang-important" value="1"></option>
+                    <option class="lang-urgent" value="2"></option>
+                </select>
+            </div>
+            <div class="message-text">
+                <textarea id="text" required></textarea>
+            </div>
+            <button id="sent-btn"><span class="lang-send"></span></button>
+        </div>
+    </form>
+</div>
+<script src="~/lib/dist/js/bootstrap-multiselect.js"></script>
+<script src="js/signalr/dist/browser/signalr.min.js"></script>
+<script src="~/js/Home/index.js"></script>

@@ -1,0 +1,133 @@
+﻿#header-language{
+}
+.header-section{
+    display: none;
+}
+.header-profile{
+    display: none;
+}
+
+.login {
+    background: white;
+    display: table;
+    margin: 0 auto 0;
+    padding: 30px 40px;
+    margin-top: 60px;
+}
+
+.login-title{
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.login-logo {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 29px;
+    color: #1452B8;
+    margin-top: 22px;
+    margin-bottom: 17px;
+}
+
+.login-block {
+    max-width: 320px;
+    margin: 0 auto 0;
+    margin-top: 50px;
+    border: 1px solid #dedede;
+    padding: 20px 25px 40px 25px;
+    border-radius: 4px;
+    background: white;
+}
+
+.login-back {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+    .login-back:hover {
+        color: #1452b8;
+    }
+
+.login-input-block {
+    border: 1px solid #CCCCCC;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 8px 12px;
+}
+
+.login-input {
+    border: 0;
+    width: 240px;
+}
+
+    .login-input:focus {
+        outline: none;
+    }
+
+.login-btn {
+    color: white;
+    border: none;
+    background: #1452b8;
+    margin-top: 0;
+    padding: 5px 30px;
+    border-radius: 5px;
+    float: right;
+    margin-top: 15px;
+}
+
+    .login-btn:focus {
+        outline: none;
+    }
+
+#login-error{
+    margin-bottom: -15px;
+    margin-top: 15px;
+}
+
+#login-email-error {
+    display: none;
+}
+
+#login-password-error {
+    display: none;
+}
+
+#registry-btn {
+    float: left;
+    color: black;
+    background: #d0d0d0;
+    cursor: pointer;
+}
+
+.login-label {
+    margin-top: 15px;
+    margin-bottom: 3px;
+    color: grey;
+}
+
+#header-logout{
+    display: none;
+}
+
+@media(max-width: 400px) {
+    .login-block {
+        width: 200px;
+        box-sizing: initial;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 0px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .login-input {
+        width: 240px;
+    }
+}

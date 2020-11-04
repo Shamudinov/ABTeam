@@ -1,0 +1,56 @@
+﻿@model IEnumerable<DAL.Entities.MailTemplate>
+
+@{
+    Layout = null;
+    ViewData["Title"] = "MessageTemplates";
+}
+
+    <div class="container">
+        <h1>MessageTemplates</h1>
+
+        <p>
+            <a asp-action="CreateMessageTemplate">Create New</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Id)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Subject)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Body)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Language.Name)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Id)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Subject)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Body)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Language.Name)
+                        </td>
+                        <td>
+                            @Html.ActionLink("MessageTemplateEdit", "EditMessageTemplate", new {  id=item.Id }) |
+                            @Html.ActionLink("MessageTemplateDelete", "DeleteMessageTemplate", new {  id=item.Id })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

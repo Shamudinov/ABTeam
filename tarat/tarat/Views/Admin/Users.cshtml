@@ -1,0 +1,54 @@
+﻿@model IEnumerable<DAL.Entities.User>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Users</title>
+</head>
+<body>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Email</th>
+                <th>School</th>
+                <th>Grade</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Surname</td>
+                    <td>@item.Email</td>
+                    <td>@item.School?.Name</td>
+                    @if (item.Grades != null)
+                    {
+                        foreach(var grade in item.Grades){
+                        <td>@grade.Grade.Name</td>
+                        }
+                    }
+                    else
+                    {
+                        <td></td>
+                    }
+                    <td>
+                        <a href="/Admin/UserEdit?id=@item.Id">Edit Role</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

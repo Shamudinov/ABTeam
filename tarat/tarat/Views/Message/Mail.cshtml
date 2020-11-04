@@ -1,0 +1,38 @@
+﻿@model BLL.ViewModels.MessageViewModel
+
+@{
+    ViewData["Title"] = "Mail";
+}
+<link rel="stylesheet" href="/css/Messenger/mail.css"/>
+<div class="container">
+    <a asp-action="Index"><p class="back-button"><span class="lang-back"></span></p></a>
+
+    <div class="mail">
+        <div class="mail-up">
+            <p class="mail-up-from"><span class="lang-from"></span>: @Model.UserFromName</p>
+            <p class="mail-up-to"><span class="lang-to"></span>: @Model.UserToName</p>
+        </div>
+
+        @{
+            if (Model.Urgency == 0)
+            {
+                <p class="mail-title" style="background: #3da4ab;">@Model.Subject</p>
+            }
+            else if (Model.Urgency == 1)
+            {
+                <p class="mail-title" style="background: #feBa71;">@Model.Subject</p>
+            }
+            else if (Model.Urgency == 2)
+            {
+                <p class="mail-title" style="background: #ff8b72;">@Model.Subject</p>
+            }
+        }
+        <pre class="mail-text">@Model.Text</pre>
+
+        <div class="mail-down">
+            <p class="mail-up-time"><span class="lang-time"></span> @Model.Time.Year/@Model.Time.Month/@Model.Time.Day @Model.Time.Hour:@Model.Time.Minute</p>
+            <a href="/message/send?userFromId=@Model.UserFromId&userToId=@Model.UserToId"><p class="send-btn"><span class="lang-reply"></span></p></a>
+        </div>
+    </div>
+</div>
+<script src="~/js/Messenger/mail.js"></script>

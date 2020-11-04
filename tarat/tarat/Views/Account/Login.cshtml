@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+
+<link rel="stylesheet" href="~/css/Account/login.css"/>
+<div class="login">
+    @Html.Raw("<form id='LoginForm' @submit='Login' action='" + ViewData["returnUrl"] + "' method='Get'>")
+        <p class="login-title"><span class="lang-login"></span></p>
+
+        <p id="login-error" class="text-error"></p>
+
+        <label class="login-label"><span class="lang-email"></span>:</label>
+        <div v-bind:class="{errorInput:(emailErr.length > 0)}" class="login-input-block">
+            <input v-model="email" type="email" class="login-input" required/>
+        </div>
+
+        <label class="login-label"><span class="lang-password"></span>:</label>
+        <div v-bind:class="{errorInput:(passwordErr.length > 0)}" class="login-input-block">
+            <input v-model="password" type="password" class="login-input" required/>
+        </div>
+        
+        
+        <p id="registry-btn" class="login-btn"><span class="lang-registry"></span></p>
+        <button id="login-btn" class="login-btn"><span class="lang-login"></span></button>
+    @Html.Raw("</form>")
+</div>
+<script src="/js/Account/login.js"></script>

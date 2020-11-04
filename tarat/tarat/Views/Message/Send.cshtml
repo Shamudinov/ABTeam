@@ -1,0 +1,36 @@
+﻿<link rel="stylesheet" href="~/css/Home/index.css" />
+<link rel="stylesheet" href="~/lib/dist/css/bootstrap-multiselect.css" />
+<div class="container">
+    <form action="/messages">
+        <div class="message-block">
+            <p class="message-title"><span class="lang-send-message"></span></p>
+            
+            <input id="id" type="hidden" value="@ViewData["id"]"/>
+
+            <div class="message-template">
+                <label class="message-template-label"><span class="lang-templates"></span></label>
+                <select id="templates" class="multiselect dropdown-toggle btn btn-default"><option value="" disabled selected></option></select>
+            </div>
+
+            <div class="message-template">
+                <label class="message-template-label"><span class="lang-subject"></span></label>
+                <input id="subject" required />
+            </div>
+
+            <div class="message-template">
+                <label class="message-template-label"><span class="lang-urgency"></span></label>
+                <select id="urgency" class="multiselect dropdown-toggle btn btn-default">
+                    <option class="lang-daily" value="0" selected></option>
+                    <option class="lang-important" value="1"></option>
+                    <option class="lang-urgent" value="2"></option>
+                </select>
+            </div>
+            <div class="message-text">
+                <textarea id="text" required></textarea>
+            </div>
+            <button id="sent-btn"><span class="lang-send"></span></button>
+        </div>
+    </form>
+</div>
+<script src="~/lib/dist/js/bootstrap-multiselect.js"></script>
+<script src="~/js/Messenger/send.js"></script>

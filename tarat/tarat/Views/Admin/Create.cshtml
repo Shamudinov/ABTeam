@@ -1,0 +1,23 @@
+﻿@{
+    Layout = null;
+}
+@model List<BLL.ViewModels.SchoolViewModel> 
+<h1>Create</h1>
+
+<form action="/Admin/Add">
+    <input name="Name" type="text" placeholder="Name" /><br>
+    <input name="Surname" type="text" placeholder="Surname"/><br>
+    <input name="Email" type="email" placeholder="Email"/><br>
+    <input name="Password" type="text" placeholder="Password"/><br>
+    <select name="School"><br>
+        @foreach (var item in Model)
+        {
+            <option>@item.Name</option>
+        }
+    </select><br>
+    <select name="Role">
+        <option>Manager</option>
+        <option>Teacher</option>
+    </select><br>
+    <button>Add</button>
+</form>

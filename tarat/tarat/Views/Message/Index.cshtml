@@ -1,0 +1,15 @@
+﻿<link rel="stylesheet" href="~/css/Messenger/index.css"/>
+<div class="container">
+    <input id="userId" type="hidden" value="@ViewData["id"]" />
+    <div class="aside">
+        <p class="aside-title"><span class="lang-messages"></span></p>
+        <p class="box-active-block" id="inbox"><span class="lang-inbox"></span></p>
+        <p class="box-block" id="outbox"><span class="lang-outbox"></span></p>
+    </div>
+    <div class="main">
+        <div id="mails"></div>
+    </div>
+
+</div>
+<script src="js/signalr/dist/browser/signalr.min.js"></script>
+<script src="~/js/Messenger/index.js"></script>

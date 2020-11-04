@@ -1,0 +1,60 @@
+﻿.mail{
+   background: white;
+   border-radius: 5px;
+   width: 100%;
+   display: table;
+}
+.mail-up {
+    background: #404040;
+    padding: 10px 20px 0 20px;
+    color: white;
+    display: table;
+    font-family: 'Lucida Console';
+    width: 100%;
+    font-size: 16px;
+}
+.mail-up-from {
+    float: left;
+}
+.mail-up-to {
+    float: right;
+}
+.mail-title {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0px;
+    color: white;
+    font-size: 18px;
+    font-family: 'Lucida Console';
+}
+.mail-text{
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    margin: 10px 20px;
+    border-radius: 5px;
+}
+.mail-down{
+    padding: 10px 25px;
+}
+.mail-up-time{
+    font-size: 12px;
+    float: left;
+}
+.send-btn{
+    float: right;
+    background: #ccc;
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin-top: -8px;
+    margin-bottom: 15px;
+    color: black;
+}
+.back-button {
+    background: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: table;
+    margin-bottom: 15px;
+    color: black;
+}

@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Registry";
+}
+
+<link rel="stylesheet" href="~/css/Account/registry.css" />
+<div class="registry">
+    @Html.Raw("<form id='Form' @submit='Registry' action='/'>")
+    <p class="registry-title"><span class="lang-registry"></span></p>
+
+    <p id="registry-error" class="text-error"></p>
+
+    <label class="registry-label"><span class="lang-name"></span>:</label>
+    <div v-bind:class="{errorInput:(nameErr.length > 0)}" class="registry-input-block">
+        <input v-model="name" type="text" class="registry-input" required />
+    </div>
+
+    <label class="registry-label"><span class="lang-surname"></span>:</label>
+    <div v-bind:class="{errorInput:(surnameErr.length > 0)}" class="registry-input-block">
+        <input v-model="surname" type="text" class="registry-input" required />
+    </div>
+
+    <label class="registry-label"><span class="lang-ipp"></span>:</label>
+    <div v-bind:class="{errorInput:(ippErr.length > 0)}" class="registry-input-block">
+        <input v-model="ipp" type="text" class="registry-input" required />
+    </div>
+
+
+    <label class="registry-label"><span class="lang-email"></span>:</label>
+    <div v-bind:class="{errorInput:(emailErr.length > 0)}" class="registry-input-block">
+        <input v-model="email" type="email" class="registry-input" required />
+    </div>
+    <p class="registry-input-text">*<span class="lang-gmail-advise"></span></p>
+
+    <label class="registry-label-select"><span class="lang-school"></span></label>
+    <select v-model="school" id="school" required><option value="" disabled selected></option></select>
+
+    <label class="registry-label-select"><span class="lang-grade"></span></label>
+    <select v-model="grade" id="grade" required><option value="" disabled selected></option></select><br />
+
+    <label class="registry-label"><span class="lang-password"></span>:</label>
+    <div v-bind:class="{errorInput:(passwordErr.length > 0)}" class="registry-input-block">
+        <input v-model="password" type="password" class="registry-input" required minlength="6" />
+    </div>
+
+
+    <p id="login-btn" class="registry-btn"><span class="lang-login"></span></p>
+    <button id="registry-btn" class="registry-btn"><span class="lang-registry"></span></button>
+    @Html.Raw("</form>")
+</div>
+<script src="/js/Account/registry.js"></script>

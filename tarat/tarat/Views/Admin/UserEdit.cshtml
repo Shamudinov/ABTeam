@@ -1,0 +1,45 @@
+﻿@model BLL.ViewModels.UserRoleView
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UserEdit</title>
+</head>
+<body>
+
+    <h4>UserRoleView</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form action="/Admin/UserSaveRole" method="post">
+                <select name="roles" multiple>
+                    @foreach (var item in Model.AllRoles)
+                    {
+                        if (Model.UserRoles.Any(x => x.Id == item.Id))
+                        {
+                            <option value="@item.Id" selected>@item.Name</option>
+                        }
+                        else
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    }
+                </select>
+                <input type="hidden" name="userId" value="@Model.UserId">
+                <button>Save</button>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+
+</body>
+</html>

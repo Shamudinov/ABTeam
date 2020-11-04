@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200816070049_RenameTeacherGradesTable.cs" />
+    <Compile Remove="Migrations\20200816070049_RenameTeacherGradesTable.Designer.cs" />
+    <Compile Remove="Migrations\20200816071836_AddUserSeed.cs" />
+    <Compile Remove="Migrations\20200816071836_AddUserSeed.Designer.cs" />
+    <Compile Remove="Migrations\20200816072042_AddUserSeed.cs" />
+    <Compile Remove="Migrations\20200816072042_AddUserSeed.Designer.cs" />
+    <Compile Remove="Migrations\20200816075225_AddUserSeed.cs" />
+    <Compile Remove="Migrations\20200816075225_AddUserSeed.Designer.cs" />
+    <Compile Remove="Migrations\20200818221456_AddMessageTemplateAndLanguage111.cs" />
+    <Compile Remove="Migrations\20200818221456_AddMessageTemplateAndLanguage111.Designer.cs" />
+    <Compile Remove="Migrations\20200903082430_EditStudentInfoTable.cs" />
+    <Compile Remove="Migrations\20200903082430_EditStudentInfoTable.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj" />
+  </ItemGroup>
+
+</Project>
